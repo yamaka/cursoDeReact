@@ -1,18 +1,76 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import "./App.css";
+
+//componente como funcion
+/* const App = ()=>{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         primera clase del curso de react.
-        </p>
-       
-      </header>
+    <div style={{display: 'flex', flexDirection:'row', justifyContent: 'center'}}>
+      <div className='container'>
+        <h1>hola JSX</h1>
+        <div>
+          <span>titulo</span>
+          <p>texto</p>
+        </div>
+      </div>
     </div>
   );
+} */
+
+const Contador = ({ valorContador, handleContador }) => {
+  return (
+    <div style={{ border: "solid 1px", borderColor: "#eee" }}>
+      <button className="boton" onClick={handleContador}>
+        +
+      </button>
+      <span style={{ marginLeft: "2rem" }}>{valorContador}</span>
+    </div>
+  );
+};
+
+const Hijo2 = () => {
+  return <h1>soy un componente</h1>;
+};
+
+//componnete como clase
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+     contador: 0 
+    }
+  }
+
+  handleContador= ()=>{
+    const {contador } = this.state;
+    this.setState({
+      contador: contador + 1,
+    })
+    console.log('contador');
+  }
+
+  render() {
+    const { contador } = this.state
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
+        <div className="container">
+          <h1>hola JSX componente como clase</h1>
+          <Contador
+            valorContador={contador}
+            handleContador={this.handleContador}
+          />
+          <Hijo2 />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

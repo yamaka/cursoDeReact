@@ -122,6 +122,41 @@ console.log(
   `el departamento tiene una extension de: ${extensionDep} y cuenta con: ${numHabitaciones} habitaciones`
 );
 
+//Clases
+
+class Auto {
+  constructor(marca){
+    this.marca = marca;
+  }
+  mostrarMarca(){
+    return 'la marca es: '+ this.marca; 
+  }
+}
+
+const auto = new Auto('BMW');
+//auto.mostrarMarca();
+
+class Auto2 extends Auto{
+  constructor(marca, modelo){
+    super(marca);
+    this.modelo = modelo
+  }
+
+  mostrarModelo(){
+    return 'el modelo es: ' +  this.modelo;
+  }
+}
+
+const auto2 = new Auto2('TOYOTA', 2021);
+
+/* auto2.mostrarMarca();
+ auto2.mostrarModelo();*/
+
+console.log(auto2.mostrarMarca() +' y '+auto2.mostrarModelo());
+
+
+
+
 
 
 
