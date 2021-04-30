@@ -17,7 +17,7 @@ import "./App.css";
   );
 } */
 
-const Contador = ({ valorContador, handleContador }) => {
+const Contador = ({valorContador, handleContador}) => {
   return (
     <div style={{ border: "solid 1px", borderColor: "#eee" }}>
       <button className="boton" onClick={handleContador}>
@@ -28,13 +28,14 @@ const Contador = ({ valorContador, handleContador }) => {
   );
 };
 
-const Hijo2 = () => {
+export const Hijo2 = () => {
   return <h1>soy un componente</h1>;
 };
 
+
 //componnete como clase
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -72,5 +73,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;

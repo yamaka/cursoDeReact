@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+.containerCalculadora{
+
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px;
+    border-color: #eee;
+    padding: .8rem;
+}
+.inputCalculadora{
+    width: 80%;
+    height: 2rem;
+    font-size: 1.5rem;
+    margin: 2rem;
+}
+
+.inputCalculadora{
+     width: 80%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.boton{
+    display: flex;
+    align-items: center;
+    background-color: #61dafb;
+  padding: 1.3rem;
+  color:white;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
