@@ -18,6 +18,8 @@ import "./App.css";
 } */
 
 const Contador = ({valorContador, handleContador}) => {
+  //es lo mismo que
+  //const {valorContador,handleContador }= props
   return (
     <div style={{ border: "solid 1px", borderColor: "#eee" }}>
       <button className="boton" onClick={handleContador}>

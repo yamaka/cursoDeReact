@@ -5,11 +5,13 @@ import {App, Hijo2} from './App';
 import reportWebVitals from './reportWebVitals';
 
 import Calculadora from './components/Calculadora/Calculadora';
+import TiposComida from './components/TiposComida/TiposComida';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Calculadora/>
+    {/* <Calculadora/> */}
+    <TiposComida/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -83,7 +85,7 @@ const {nombre, cursos:{front}} = persona;
 console.log(nombre + " esta cursando en front: " + front);
 
 //Spread Operator
-const numeros2 = [2,4,6,8];
+const numeros2 = [2,4,6,8]; //harcodeado
 const numeros3 = [1,3,5,7];
 
 let numerosResult = [];
