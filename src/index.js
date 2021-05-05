@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {App, Hijo2} from './App';
+//import {App, Hijo2} from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Calculadora from './components/Calculadora/Calculadora';
-import TiposComida from './components/TiposComida/TiposComida';
+//import Calculadora from './components/Calculadora/Calculadora';
+//import TiposComida from './components/TiposComida/TiposComida';
+import CiclosDeVida from './components/CiclosDeVida/CiclosDeVida';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Calculadora/> */}
-    <TiposComida/>
+    {/* <TiposComida/> */}
+    <CiclosDeVida/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -20,43 +22,43 @@ ReactDOM.render(
 //Clase 2
 //Variables
 /* var nombre = 'Rosa';
-console.log(nombre);
+//console.log(nombre);
 var nombre = 'Eliana';
-console.log(nombre); */
+//console.log(nombre); */
 
 let nombre1 = 'Rosa';
-console.log(nombre1);
+//console.log(nombre1);
 let nombre2 = 'Eliana';
-console.log(nombre2);
+//console.log(nombre2);
 
 //Constantes
 
 const colegio = 'Don bosco';
 //colegio = 'Ayacucho';
-console.log(colegio);
+//console.log(colegio);
 
 //Arroy functions(funciones flecha)
 function miFuncion(){
-  console.log('my funcion');
+  //console.log('my funcion');
 }
 miFuncion();
 
 const miFuncionFlecha = () =>{
-  console.log("mi funcion flecha");
+  //console.log("mi funcion flecha");
 }
 miFuncionFlecha();
 
 /* setTimeout(function(){
-  console.log('paso 2 segs.')
+  //console.log('paso 2 segs.')
 }, 2000)
 
 setTimeout(()=>{
-  console.log('paso 3 segs.')
+  //console.log('paso 3 segs.')
 }, 3000) */
 
 const suma = (n1, n2) => n1 + n2;
 
-console.log('la suma de 2 + 3 = ', suma(2,3));
+//console.log('la suma de 2 + 3 = ', suma(2,3));
 
 const numeros = [ 2,5,1,6];
 let dobles = [0,0,0,0];
@@ -66,8 +68,8 @@ let dobles = [0,0,0,0];
 
 dobles = numeros.map( numero => numero * 2);
 
-console.log('el doble de numeros', numeros);
-console.log('es :', dobles);
+//console.log('el doble de numeros', numeros);
+//console.log('es :', dobles);
 
 //Destructuracion en es6 
 
@@ -80,9 +82,9 @@ const persona = {
   }
 }
 
-console.log(persona.nombre + ' esta cursando en front: ' + persona.cursos.front);
+//console.log(persona.nombre + ' esta cursando en front: ' + persona.cursos.front);
 const {nombre, cursos:{front}} = persona;
-console.log(nombre + " esta cursando en front: " + front);
+//console.log(nombre + " esta cursando en front: " + front);
 
 //Spread Operator
 const numeros2 = [2,4,6,8]; //harcodeado
@@ -99,7 +101,7 @@ let numerosResult = [];
 } */
 
 numerosResult = [...numeros2, ...numeros3];
-console.log('la union de los arrays 2 y 3 es: ', numerosResult)
+//console.log('la union de los arrays 2 y 3 es: ', numerosResult)
 
 //Spread Operator en Objetos
 
@@ -116,16 +118,14 @@ const proyecto = {
   telefono: 76232222
 }
 
-console.log({...departamento, ...proyecto});
+//console.log({...departamento, ...proyecto});
 
 //template literals
 const extensionDep = 70;
 const numHabitaciones = 2;
 
-console.log('el departamento tiene una extension de: '+ extensionDep + ' y cuenta con: ' + numHabitaciones + ' habitaciones');
-console.log(
-  `el departamento tiene una extension de: ${extensionDep} y cuenta con: ${numHabitaciones} habitaciones`
-);
+//console.log('el departamento tiene una extension de: '+ extensionDep + ' y cuenta con: ' + numHabitaciones + ' habitaciones');
+//console.log(`el departamento tiene una extension de: ${extensionDep} y cuenta con: ${numHabitaciones} habitaciones`);
 
 //Clases
 
@@ -157,7 +157,7 @@ const auto2 = new Auto2('TOYOTA', 2021);
 /* auto2.mostrarMarca();
  auto2.mostrarModelo();*/
 
-console.log(auto2.mostrarMarca() +' y '+auto2.mostrarModelo());
+//console.log(auto2.mostrarMarca() +' y '+auto2.mostrarModelo());
 
 
 

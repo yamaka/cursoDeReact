@@ -25,7 +25,7 @@ export default class Caculadora extends React.Component {
   handleDisplayValue = (valor) =>{
     const {resultado, valor1, valor2} = this.state;
 
-    if(resultado == 0 ){
+    if(resultado === 0 ){
         this.setState({
             display: valor
         })

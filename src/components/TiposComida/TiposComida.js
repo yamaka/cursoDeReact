@@ -24,7 +24,7 @@ export default class TiposComida extends Component {
     };
   }
   renderTiposComida=()=>{
-      debugger
+      
     const {tiposComida} = this.state;
     return <React.Fragment>
             {tiposComida.map(comida => {
@@ -39,7 +39,7 @@ export default class TiposComida extends Component {
     </React.Fragment>
   }
 
-  
+
   render() {
     return (
       <div>
