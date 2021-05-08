@@ -6,14 +6,18 @@ import reportWebVitals from './reportWebVitals';
 
 //import Calculadora from './components/Calculadora/Calculadora';
 //import TiposComida from './components/TiposComida/TiposComida';
-import CiclosDeVida from './components/CiclosDeVida/CiclosDeVida';
+//import CiclosDeVida from './components/CiclosDeVida/CiclosDeVida';
+//import Cursos from './Admin/Cursos/Cursos';
+import AppRouter from './router';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Calculadora/> */}
     {/* <TiposComida/> */}
-    <CiclosDeVida/>
+    {/* <CiclosDeVida/> */}
+    {/* <Cursos/> */}
+    <AppRouter/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -26,7 +30,7 @@ ReactDOM.render(
 var nombre = 'Eliana';
 //console.log(nombre); */
 
-let nombre1 = 'Rosa';
+/*let nombre1 = 'Rosa';
 //console.log(nombre1);
 let nombre2 = 'Eliana';
 //console.log(nombre2);
@@ -54,7 +58,7 @@ miFuncionFlecha();
 
 setTimeout(()=>{
   //console.log('paso 3 segs.')
-}, 3000) */
+}, 3000)
 
 const suma = (n1, n2) => n1 + n2;
 
@@ -64,7 +68,7 @@ const numeros = [ 2,5,1,6];
 let dobles = [0,0,0,0];
 /* for(let i = 0 ; i<numeros.length; i++){
   dobles[i] = numeros[i] * 2;
-} */
+} 
 
 dobles = numeros.map( numero => numero * 2);
 
@@ -98,7 +102,7 @@ let numerosResult = [];
   }else{
     numerosResult.push(numeros3[numeros3.length - i])
   }
-} */
+} 
 
 numerosResult = [...numeros2, ...numeros3];
 //console.log('la union de los arrays 2 y 3 es: ', numerosResult)
@@ -158,7 +162,7 @@ const auto2 = new Auto2('TOYOTA', 2021);
  auto2.mostrarModelo();*/
 
 //console.log(auto2.mostrarMarca() +' y '+auto2.mostrarModelo());
-
+ 
 
 
 
