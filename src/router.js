@@ -1,17 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
 
 import Cursos from "./pages/Admin/Cursos/Cursos";
 import DetailCurso from "./pages/Admin/DetailCurso/DetailCurso";
 import Home from "./pages/Public/Home/Home";
+import Signin from "./pages/Public/Signin/Signin";
+import Signup from "./pages/Public/Signup/Signup";
 
 export default function AppRouter() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+
+
   return (
     <Router>
       <div>
         {/*Inicio Header */}
-        <Header/>
+        <Header isLoggedIn={isLoggedIn} username={username}  />
 
         {/*Fin Header */}
 
@@ -30,8 +37,14 @@ export default function AppRouter() {
           <Route exact path="/cursos/:id">
             <DetailCurso />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          <Route exact path="/signin">
+            <Signin setIsLoggedIn={setIsLoggedIn} setUsername={setUsername} />
           </Route>
         </Switch>
       </div>
