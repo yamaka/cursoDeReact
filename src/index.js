@@ -41,7 +41,7 @@ const colegio = 'Don bosco';
 //colegio = 'Ayacucho';
 //console.log(colegio);
 
-//Arroy functions(funciones flecha)
+//Arrow functions(funciones flecha)
 function miFuncion(){
   //console.log('my funcion');
 }
@@ -119,7 +119,8 @@ const departamento = {
 const proyecto = {
   nombre: 'Edifcio Ayala',
   oficina: 'yanacocha',
-  telefono: 76232222
+  telefono: 76232222,
+  direccion: 'calle 10 # 1000'
 }
 
 //console.log({...departamento, ...proyecto});

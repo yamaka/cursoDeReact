@@ -1,10 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
+//constext
+import {CartContext} from "../../context/CartContext";
+import { AuthContext } from "../../context/AuthContext";
 
-const CardCurso = ({ titulo, descripcion, imagen, id }) => {
+const CardCurso = (props) => {
+  const { curso, curso:{titulo, descripcion, imagen, id} } = props;
     const history = useHistory();
+
+    const [cartStateContext, setCartStateContext, addToCart] = useContext(CartContext);
+    const {cursos, idCart} = cartStateContext;
+    const [authStateContext, setAuthStateContext] = useContext(AuthContext);
+    const { username, email, isLoggedIn } = authStateContext;
     const redirectTo = () =>{
         history.push(`/cursos/${id}`);
+    }
+    const isInCartCourse = () =>{
+      const result = cursos.find((cursoCarrito) => cursoCarrito.id == id); 
+      return typeof result != "undefined";
+    }
+    const toCartPage = () => {
+      if (!isLoggedIn) {
+        history.push("/signin");
+      }else{
+        history.push("/cart/" + idCart);
+      }
+      
+    };
+    const agregarAlCarrito =()=>{
+       if (!isLoggedIn) {
+         history.push("/signin");
+       }else{
+         addToCart(curso)
+       }
     }
   return (
     <figure className="flex flex-col items-center bg-gray-100 rounded-xl p-8 w-1/4 mx-8 my-8 cursor-pointer">
@@ -29,9 +57,22 @@ const CardCurso = ({ titulo, descripcion, imagen, id }) => {
         </div>
       </div>
       <br />
-      <button className="bg-green-500 text-white p-2 rounded font-semibold w-11/12">
-        Carrito
-      </button>
+      {!isInCartCourse() && (
+        <button
+          className="bg-green-500 text-white p-2 rounded font-semibold w-11/12"
+          onClick={() => agregarAlCarrito()}
+        >
+          Carrito
+        </button>
+      )}
+      {isInCartCourse() && (
+        <button
+          className="bg-green-500 text-white p-2 rounded font-semibold w-11/12"
+          onClick={() => toCartPage()}
+        >
+          Ir al carrito
+        </button>
+      )}
     </figure>
   );
 };

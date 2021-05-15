@@ -29,7 +29,7 @@ const Home = () => {
         Nuestros Mejores Cursos
       </h1>
       <div className="flex flex-row py-8 px-32 w-11/12 justify-center flex-wrap">
-        {cursos.map((curso) => <CardCurso {...curso}/>)}
+        {cursos.map((curso) => <CardCurso curso={curso}/>)}
       </div>
     </div>
   );

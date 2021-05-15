@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import {useHistory} from "react-router-dom"
+import {useHistory, Link} from "react-router-dom";
+import GoogleLogin from "react-google-login";
 
-const Signin = ({ setIsLoggedIn, setUsername }) => {
+import {AuthContext} from "../../../context/AuthContext";
+
+const Signin = () => {
     const history = useHistory();
+    const [authStateContext, setAuthStateContext] = useContext(AuthContext)
   const [signinForm, setSigninForm] = useState({
     username: "",
     password: "",
@@ -26,8 +30,14 @@ const Signin = ({ setIsLoggedIn, setUsername }) => {
           signinForm
         );
         if (response.data) {
-          setIsLoggedIn(true);
-          setUsername(response.data.username);
+          const userLogged = {
+            isLoggedIn: true,
+            username: response.data.username,
+            email: response.data.email,
+            id: response.data.id,
+          };
+          setAuthStateContext(userLogged);
+          localStorage.setItem("USER", JSON.stringify(userLogged));
           history.push("/")
         }
       } catch (error) {
@@ -63,6 +73,10 @@ const Signin = ({ setIsLoggedIn, setUsername }) => {
             placeholder="Contraseña"
             onChange={(e) => handleChangeForm(e.target.value, "password")}
           />
+          <br />
+          <span>Si no tienes una cuenta  <Link to="/signup"><span className="text-blue-300">registrate</span></Link></span>
+          <br />
+          <br />
           <button
             disabled={validateInfo()}
             className="bg-green-500 w-full text-center py-3 rounded text-white hover:bg-green-dark focus-outline-none my-1 "
@@ -71,6 +85,7 @@ const Signin = ({ setIsLoggedIn, setUsername }) => {
             Ingresar
           </button>
         </div>
+        
       </div>
     </div>
   );
